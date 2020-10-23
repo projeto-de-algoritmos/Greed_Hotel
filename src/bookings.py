@@ -1,5 +1,6 @@
 import sys
 from copy import deepcopy
+import re
 
 
 # Python3 code for the above approach. 
@@ -70,6 +71,7 @@ def tratarDados(valorEntrada):
 
     entrada = []
     saida = []
+    erro = ""
 
     for horario in valorEntrada:
         entradaTemp = ""
@@ -79,7 +81,13 @@ def tratarDados(valorEntrada):
         horario.strip(" ")
 
         for i in horario:
-            if i == ' ':
+            if not re.match("[0-9 -]",i):
+
+                # print("erro: ",i)
+                if not re.match("[()]",i):
+                    erro = erro + str(i)
+
+            elif i == ' ':
                 # print("spaced")
                 None
             elif i == '-':
@@ -107,5 +115,9 @@ def tratarDados(valorEntrada):
 
     for partText in test:
         texto = texto + str(partText) + '\n' + '\n'
+
+    if not erro == "" :
+        texto = texto  + "Os algarismos [" + str(erro) + "] não podem serem aceitos e foram retirados automaticamente;" + '\n'
+
 
     return texto

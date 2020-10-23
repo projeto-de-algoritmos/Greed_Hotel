@@ -27,7 +27,7 @@ lbl2.place(x=10,y=53)
 inputEntrada = Entry(janela,width=52)
 inputEntrada.place(x=10,y=78)
 
-resultadoLabel = Label(janela, text="Resultado",fg="black",font=('Arial',14))
+resultadoLabel = Label(janela, text="Resultado",fg="white",font=('Arial',14))
 resultadoLabel.place(x=10,y=160)
 resultadoLabel.configure(background='blue')
 
