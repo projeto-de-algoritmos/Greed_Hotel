@@ -1,9 +1,10 @@
 from tkinter import *
+import re
 
 
 janela = Tk()
 
-janela.title("Welcome to LikeGeeks app")
+janela.title("Hotel HOTEL")
 
 windowWidth = janela.winfo_reqwidth()
 windowHeight = janela.winfo_reqheight()
@@ -30,16 +31,42 @@ resultadoLabel = Label(janela, text="Resultado")
 resultadoLabel.place(x=0,y=145)
 
 
+
+
+
 def clicked():
+    erro="""Entrada inválida {}
+formato válido ex:1-6,3-6
+tente novamente"""
+    alerta = 0
     valorEntrada = inputEntrada.get()
+
     try:
         valorEntrada = valorEntrada.split(',')
+        entrada = []
+        for i in valorEntrada:
+            if not re.match("[0-9]+-[0-9]+",i):
+                print("erro: ",i)
+                erro = erro.format(i)
+                alerta=1
+                break
+            b = i.split('-')
+            entrada.append((int(b[0]),int(b[1])))
+        print(entrada)
     except:
-        print("error")
+        erro=erro
+        alerta = 1
     
-    print(valorEntrada)
-
-    texto = "Não há quartos suficientes...."
+    # print(valorEntrada)
+    texto = ""
+    
+    if(alerta!=0):
+        texto = erro
+    else:
+        # Chamar funções e pegar os resutados
+        texto = "Numero de quartos suficiente"
+    
+    
 
     
     caixaTexto = Text(janela, height=10,width=50)
@@ -47,7 +74,7 @@ def clicked():
     caixaTexto.place(x=0, y=160)
 
 
-btn = Button(janela, text="Verificar disponibilidade", command=clicked)
+btn = Button(janela, text="Analisar", command=clicked)
 
 btn.place(x=100,y=110)
 
