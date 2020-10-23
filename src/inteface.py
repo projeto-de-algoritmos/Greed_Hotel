@@ -26,7 +26,7 @@ lbl2.place(x=0,y=75)
 inputEntrada = Entry(janela,width=30)
 inputEntrada.place(x=100,y=75)
 
-resultadoLabel = Label(janela, text="Resultado")
+resultadoLabel = Label(janela, text="Resultado",fg="black",font=('Arial',10))
 resultadoLabel.place(x=0,y=145)
 
 

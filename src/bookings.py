@@ -46,10 +46,10 @@ def possiveisHorarios(entrada, saida, numero_quartos):
 # if __name__ == "__main__": 
 
 def quartosNecessarios(entrada, saida): 
-    entrada = [1, 3, 5, 6] 
-    saida = [2, 6, 8, 8] 
-    entrada = [1, 3, 0, 5, 6, 5, 7, 8, 11, 2, 13]
-    saida = [4, 5, 6, 7, 9, 9, 10, 11, 12, 14, 16]
+    # entrada = [1, 3, 5, 6] 
+    # saida = [2, 6, 8, 8] 
+    # entrada = [1, 3, 0, 5, 6, 5, 7, 8, 11, 2, 13]
+    # saida = [4, 5, 6, 7, 9, 9, 10, 11, 12, 14, 16]
     report = []
     for n in range(1, 99999):
         bol, quartos, hist = possiveisHorarios(entrada, saida, n)
