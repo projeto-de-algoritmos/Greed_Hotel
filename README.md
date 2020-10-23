@@ -1,45 +1,52 @@
 **!! Atenção: Renomeie o seu repositório para (Tema)_(NomeDoProjeto). !!** 
 
 Temas:
- - Grafos1
- - Grafos2
- - PD
- - D&C
  - Greed
- - Final 
- 
- **!! *Não coloque os nomes dos alunos no título do repositório*. Exemplo de título correto: Grafos2_Labirinto-do-Minotauro !!**
- 
- (Apague essa seção)
 
 # NomedoProjeto
 
-**Número da Lista**: X<br>
-**Conteúdo da Disciplina**: XXXXXXXXXX<br>
+
+**Conteúdo da Disciplina**: Greed<br>
 
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 17/0080366  |  Moacir Mascarenha |
+| 15/0062567  |  Marcos Adriano Nery |
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+<!-- Adicione 3 ou mais screenshots do projeto em funcionamento. -->
 
 ## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+**Linguagem**: python<br>
+
+#### Requisitos
+- python3 instalado
+- Biblioteca tkinter instalada
+    
+        pip install tkinter
 
 ## Uso 
-Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
+Entre com os dias em que se deseja agendar os quartos do hotel.
 
-## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
+Exemplo:
+ 
+    1-2,3-4,5-6
 
+clique em verificar
+
+<!-- ## Outros 
+Quaisquer outras informações sobre seu projeto podem ser descritas abaixo. -->
+
+## Referências
+> Find if k bookings possible with given arrival and departure times. Disponível em: https://www.geeksforgeeks.org/find-k-bookings-possible-given-arrival-departure-times/
+
+> Text Widgets .Disponível em: https://www.python-course.eu/tkinter_text_widget.php
+
+> Python GUI Examples (Tkinter Tutorial). Disponível em: https://likegeeks.com/python-gui-examples-tkinter-tutorial/
 
 
 
