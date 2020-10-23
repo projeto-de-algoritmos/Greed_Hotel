@@ -1,10 +1,9 @@
-from bookings import possiveisHorarios, quartosNecessarios
+from bookings import possiveisHorarios, quartosNecessarios, tratarDados
 from tkinter import *
-import re
 
 janela = Tk()
 
-janela.title("Hotel HOTEL")
+janela.title("Bem vindo ao Greed app")
 
 windowWidth = janela.winfo_reqwidth()
 windowHeight = janela.winfo_reqheight()
@@ -13,83 +12,60 @@ positionDown = int(janela.winfo_screenheight()/2 - windowHeight/2)
 
 # janela.geometry('350x400+0+0')
 
-janela.geometry("350x320+{}+{}".format(positionRight, positionDown))
+janela.geometry("450x465+{}+{}".format(positionRight, positionDown))
 
 lbl = Label(janela, text="Bem vindo ao hotel",fg="black",font=('Arial',15))
-lbl.place(x=100,y=0)
+lbl.place(x=140,y=0)
 
-lbl1 = Label(janela, text="Entre com as reservas antecipadas!",fg="black",font=('Arial',14))
-lbl1.place(x=20,y=25)
-
-lbl2 = Label(janela, text="Dias(ex:1-2,3-5):")
-lbl2.place(x=0,y=75)
-
-inputEntrada = Entry(janela,width=30)
-inputEntrada.place(x=100,y=75)
-
-resultadoLabel = Label(janela, text="Resultado",fg="black",font=('Arial',10))
-resultadoLabel.place(x=0,y=145)
+lbl1 = Label(janela, text="Entre com as reservas antecipadas!",fg="black",font=('Arial',13))
+lbl1.place(x=80,y=25)
 
 
+lbl2 = Label(janela, text="Dias (ex:1-2,3-5):", font=('Arial',11))
+lbl2.place(x=10,y=53)
+
+inputEntrada = Entry(janela,width=52)
+inputEntrada.place(x=10,y=78)
+
+resultadoLabel = Label(janela, text="Resultado",fg="black",font=('Arial',14))
+resultadoLabel.place(x=10,y=160)
+resultadoLabel.configure(background='blue')
 
 
+caixaTexto = Text(janela, height=14,width=53, fg="white")
+# caixaTexto.insert(END,texto)
+caixaTexto.place(x=10, y=190)
+# caixaTexto.configure(background='black')
 
 def clicked():
-    erro="""Entrada inválida {}
-formato válido ex:1-6,3-6
-tente novamente"""
-    alerta = 0
     valorEntrada = inputEntrada.get()
-
     try:
         valorEntrada = valorEntrada.split(',')
-        entrada = []
-        for i in valorEntrada:
-            if not re.match("[0-9]+-[0-9]+",i):
-                print("erro: ",i)
-                erro = erro.format(i)
-                alerta=1
-                break
-            b = i.split('-')
-            entrada.append((int(b[0]),int(b[1])))
-        print(entrada)
     except:
-        erro=erro
-        alerta = 1
+        print("error")
     
-    # print(valorEntrada)
-    texto = ""
-    
-    if(alerta!=0):
-        texto = erro
-    else:
-        # Chamar funções e pegar os resutados
-        test = quartosNecessarios(entrada)
-        texto = ""
-
-        for partText in test:
-            texto = texto + str(partText) + '\n'
-    
-    
-
-    # print(valorEntrada)
+    print(valorEntrada)
 
     # -------------------------------------------------
     #   Entrada para teste
     # 1-4, 3-5, 0-6, 5-7, 6-9, 5-9, 7-10, 8-11, 11-12, 2-14, 13-16
     # -------------------------------------------------
-    # texto = tratarDados(valorEntrada)
+    texto = tratarDados(valorEntrada)
     # texto = "O numero de quartos ideal é: "
     # texto = "Não há quartos suficientes...."
     # -------------------------------------------------
     
-    caixaTexto = Text(janela, height=10,width=50)
+    caixaTexto = Text(janela, height=14,width=53, fg="black")
     caixaTexto.insert(END,texto)
-    caixaTexto.place(x=0, y=160)
+    caixaTexto.place(x=10, y=190)
+    caixaTexto.configure(font=('Arial',11))
 
 
-btn = Button(janela, text="Analisar", command=clicked)
+# -------------------------------------------------------------
+btn = Button(janela, text="Verificar disponibilidade", command=clicked, fg="black",font=('Arial',11))
+# btn.configure(background='blue')
+# -------------------------------------------------------------
 
-btn.place(x=100,y=110)
+btn.place(x=100,y=105)
 
 janela.mainloop()

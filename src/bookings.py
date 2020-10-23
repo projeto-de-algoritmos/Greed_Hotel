@@ -2,18 +2,16 @@ import sys
 from copy import deepcopy
 
 
-# Python3 code for the above approach. [(entrada-saida)]
-def possiveisHorarios(entrada, numero_quartos): 
+# Python3 code for the above approach. 
+def possiveisHorarios(entrada, saida, numero_quartos): 
     ans = []
     # numero_quartos = k
     quartos = {}
     log = []
     for i in range(1, numero_quartos + 1):
         quartos[i] = ['Vazio', (0, 0)]
-
     for i in range(0, len(entrada)): 
-        ans.append((entrada[i][0], entrada[i][1]))
-    
+        ans.append((entrada[i], saida[i])) 
     ans.sort()
     curr_active, max_active = 0, 0
     ans_iter = deepcopy(ans)
@@ -45,21 +43,21 @@ def possiveisHorarios(entrada, numero_quartos):
         return numero_quartos < max_active, ans, log
 
 # Driver Code 
-# if __name__ == "__main__": 
+# if name == "main": 
 
-def quartosNecessarios(entrada): 
+def quartosNecessarios(entrada, saida): 
     # entrada = [1, 3, 5, 6] 
     # saida = [2, 6, 8, 8] 
     # entrada = [1, 3, 0, 5, 6, 5, 7, 8, 11, 2, 13]
     # saida = [4, 5, 6, 7, 9, 9, 10, 11, 12, 14, 16]
     report = []
-    for n in range(1, len(entrada)+1):
-        bol, quartos, hist = possiveisHorarios(entrada, n)
+    for n in range(1, 99999):
+        bol, quartos, hist = possiveisHorarios(entrada, saida, n)
         if bol:
             # print("O numero de quartos ideal é:", n)
             report.append("O numero de quartos ideal é: " + str(n))
             break
-        report.append("Para " + str(n) + " quartos é necessario alterar os horarios:  " + str(quartos))
+        report.append("Para " + str(n) + " quartos é necessario alterar os horarios: " + str(quartos))
     print("------------------------------------------------------------------------------------------")
     for j in report:
         print(j)
@@ -68,52 +66,46 @@ def quartosNecessarios(entrada):
     return voltar
 
 
-# def tratarDados(valorEntrada):
+def tratarDados(valorEntrada):
 
-#     entrada = []
-#     saida = []
+    entrada = []
+    saida = []
 
-#     for horario in valorEntrada:
-#         entradaTemp = ""
-#         saidaTemp = ""
-#         temp = 0
+    for horario in valorEntrada:
+        entradaTemp = ""
+        saidaTemp = ""
+        temp = 0
 
-#         horario.strip(" ")
+        horario.strip(" ")
 
-#         for i in horario:
-#             if i == ' ':
-#                 # print("spaced")
-#                 None
-#             elif i == '-':
-#                 temp = 1
-#             elif temp == 0:
-#                 # entradaTemp.append(i)
-#                 entradaTemp = entradaTemp + i
+        for i in horario:
+            if i == ' ':
+                # print("spaced")
+                None
+            elif i == '-':
+                temp = 1
+            elif temp == 0:
+                # entradaTemp.append(i)
+                entradaTemp = entradaTemp + i
 
-#             elif temp == 1:
-#                 # saidaTemp.append(i)
-#                 saidaTemp = saidaTemp + i
+            elif temp == 1:
+                # saidaTemp.append(i)
+                saidaTemp = saidaTemp + i
 
-#         entrada.append(int(entradaTemp))
-#         saida.append(int(saidaTemp))
+        entrada.append(int(entradaTemp))
+        saida.append(int(saidaTemp))
 
-#     # numero_quartos = 2
-#     test = quartosNecessarios(entrada, saida)
+    # numero_quartos = 2
+    test = quartosNecessarios(entrada, saida)
 
-#     # print("Report", test)
-#     # print("Entrada: ", entrada)
-#     # print("Saida: ", saida)
-#     # print(valorEntrada)
+    # print("Report", test)
+    # print("Entrada: ", entrada)
+    # print("Saida: ", saida)
+    # print(valorEntrada)
 
-#     texto = ""
+    texto = ""
 
-#     for partText in test:
-#         texto = texto + str(partText) + '\n'
+    for partText in test:
+        texto = texto + str(partText) + '\n' + '\n'
 
-#     return texto
-
-
-
-
-
-
+    return texto
