@@ -42,7 +42,7 @@ clique em verificar
 Quaisquer outras informações sobre seu projeto podem ser descritas abaixo. -->
 
 ## Referências
-> Find if k bookings possible with given arrival and departure times. Disponível em: https://www.geeksforgeeks.org/find-k-bookings-possible-given-arrival-departure-times/
+> Find if k bookings possible with given entrada and saida times. Disponível em: https://www.geeksforgeeks.org/find-k-bookings-possible-given-entrada-saida-times/
 
 > Text Widgets .Disponível em: https://www.python-course.eu/tkinter_text_widget.php
 

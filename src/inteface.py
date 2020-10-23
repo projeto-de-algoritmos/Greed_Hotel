@@ -1,6 +1,6 @@
+from bookings import possiveisHorarios, quartosNecessarios
 from tkinter import *
 import re
-
 
 janela = Tk()
 
@@ -27,7 +27,7 @@ lbl2.place(x=0,y=75)
 inputEntrada = Entry(janela,width=30)
 inputEntrada.place(x=100,y=75)
 
-resultadoLabel = Label(janela, text="Resultado")
+resultadoLabel = Label(janela, text="Resultado",fg="black",font=('Arial',10))
 resultadoLabel.place(x=0,y=145)
 
 
@@ -64,10 +64,24 @@ tente novamente"""
         texto = erro
     else:
         # Chamar funções e pegar os resutados
-        texto = "Numero de quartos suficiente"
+        test = quartosNecessarios(entrada)
+        texto = ""
+
+        for partText in test:
+            texto = texto + str(partText) + '\n'
     
     
 
+    # print(valorEntrada)
+
+    # -------------------------------------------------
+    #   Entrada para teste
+    # 1-4, 3-5, 0-6, 5-7, 6-9, 5-9, 7-10, 8-11, 11-12, 2-14, 13-16
+    # -------------------------------------------------
+    # texto = tratarDados(valorEntrada)
+    # texto = "O numero de quartos ideal é: "
+    # texto = "Não há quartos suficientes...."
+    # -------------------------------------------------
     
     caixaTexto = Text(janela, height=10,width=50)
     caixaTexto.insert(END,texto)
