@@ -1,5 +1,5 @@
+from bookings import possiveisHorarios, quartosNecessarios, tratarDados
 from tkinter import *
-
 
 janela = Tk()
 
@@ -39,8 +39,14 @@ def clicked():
     
     print(valorEntrada)
 
-    texto = "Não há quartos suficientes...."
-
+    # -------------------------------------------------
+    #   Entrada para teste
+    # 1-4, 3-5, 0-6, 5-7, 6-9, 5-9, 7-10, 8-11, 11-12, 2-14, 13-16
+    # -------------------------------------------------
+    texto = tratarDados(valorEntrada)
+    # texto = "O numero de quartos ideal é: "
+    # texto = "Não há quartos suficientes...."
+    # -------------------------------------------------
     
     caixaTexto = Text(janela, height=10,width=50)
     caixaTexto.insert(END,texto)
