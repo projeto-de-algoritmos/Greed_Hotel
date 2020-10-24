@@ -1,4 +1,3 @@
-**!! Atenção: Renomeie o seu repositório para (Greed)_(Hotel). !!** 
 
 Temas:
  - Greed
