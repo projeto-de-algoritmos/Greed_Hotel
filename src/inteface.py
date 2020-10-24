@@ -13,30 +13,34 @@ positionDown = int(janela.winfo_screenheight()/2 - windowHeight/2)
 
 # janela.geometry('350x400+0+0')
 
-janela.geometry("350x320+{}+{}".format(positionRight, positionDown))
+janela.geometry("450x465+{}+{}".format(positionRight, positionDown))
 
 lbl = Label(janela, text="Bem vindo ao hotel",fg="black",font=('Arial',15))
-lbl.place(x=100,y=0)
+lbl.place(x=140,y=0)
 
-lbl1 = Label(janela, text="Entre com as reservas antecipadas!",fg="black",font=('Arial',14))
-lbl1.place(x=20,y=25)
-
-lbl2 = Label(janela, text="Dias(ex:1-2,3-5):")
-lbl2.place(x=0,y=75)
-
-inputEntrada = Entry(janela,width=30)
-inputEntrada.place(x=100,y=75)
-
-resultadoLabel = Label(janela, text="Resultado",fg="black",font=('Arial',10))
-resultadoLabel.place(x=0,y=145)
+lbl1 = Label(janela, text="Entre com as reservas antecipadas!",fg="black",font=('Arial',13))
+lbl1.place(x=80,y=25)
 
 
+lbl2 = Label(janela, text="Dias (ex:1-2,3-5):", font=('Arial',11))
+lbl2.place(x=10,y=53)
+
+inputEntrada = Entry(janela,width=52)
+inputEntrada.place(x=10,y=78)
+
+resultadoLabel = Label(janela, text="Resultado",fg="white",font=('Arial',14))
+resultadoLabel.place(x=10,y=160)
+resultadoLabel.configure(background='blue')
 
 
+caixaTexto = Text(janela, height=14,width=53, fg="white")
+# caixaTexto.insert(END,texto)
+caixaTexto.place(x=10, y=190)
+# caixaTexto.configure(background='black')
 
 def clicked():
     erro="""Entrada inválida {}
-formato válido ex:1-6,3-6
+formato válido ex:1-4,5-6
 tente novamente"""
     alerta = 0
     valorEntrada = inputEntrada.get()
@@ -69,23 +73,11 @@ tente novamente"""
 
         for partText in test:
             texto = texto + str(partText) + '\n'
-    
-    
 
-    # print(valorEntrada)
-
-    # -------------------------------------------------
-    #   Entrada para teste
-    # 1-4, 3-5, 0-6, 5-7, 6-9, 5-9, 7-10, 8-11, 11-12, 2-14, 13-16
-    # -------------------------------------------------
-    # texto = tratarDados(valorEntrada)
-    # texto = "O numero de quartos ideal é: "
-    # texto = "Não há quartos suficientes...."
-    # -------------------------------------------------
     
-    caixaTexto = Text(janela, height=10,width=50)
+    caixaTexto = Text(janela, height=14,width=53)
     caixaTexto.insert(END,texto)
-    caixaTexto.place(x=0, y=160)
+    caixaTexto.place(x=10, y=190)
 
 
 btn = Button(janela, text="Analisar", command=clicked)

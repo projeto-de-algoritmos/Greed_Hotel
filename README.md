@@ -1,9 +1,9 @@
-**!! Atenção: Renomeie o seu repositório para (Tema)_(NomeDoProjeto). !!** 
+**!! Atenção: Renomeie o seu repositório para (Greed)_(Hotel). !!** 
 
 Temas:
  - Greed
 
-# NomedoProjeto
+# Hotel
 
 
 **Conteúdo da Disciplina**: Greed<br>
@@ -14,22 +14,31 @@ Temas:
 | 17/0080366  |  Moacir Mascarenha |
 | 15/0062567  |  Marcos Adriano Nery |
 
-## Sobre 
+## Sobre
 
+O algorítimo (interval scheduling), ganancioso, é capaz de obter o número de quartos necessários a partir de um conjunto de entradas. As entradas consistem em dias de inicio e fim de uma reserva em um hotel.
 
 ## Screenshots
-<!-- Adicione 3 ou mais screenshots do projeto em funcionamento. -->
+
+![Tela1](./img/tela1.png)
+
+![Tela2](./img/tela2.png)
+
+![Tela3](./img/tela3.png)
 
 ## Instalação 
 **Linguagem**: python<br>
 
 #### Requisitos
+
 - python3 instalado
 - Biblioteca tkinter instalada
     
         pip install tkinter
 
 ## Uso 
+[Video](./img/video.mp4)
+
 Entre com os dias em que se deseja agendar os quartos do hotel.
 
 Exemplo:
@@ -38,8 +47,8 @@ Exemplo:
 
 clique em verificar
 
-<!-- ## Outros 
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo. -->
+
+
 
 ## Referências
 > Find if k bookings possible with given entrada and saida times. Disponível em: https://www.geeksforgeeks.org/find-k-bookings-possible-given-entrada-saida-times/
